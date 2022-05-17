@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+       
+        .wrapper-home{
+            height: 100vh;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            display: grid;
+            place-items: center;
+            scroll-behavior: auto;
+        }
+    </style>
+
+</head>
+<body>
+    <div class="wrapper-home">
+        <h1>Zoom</h1>
+    </div>
+    <script>
+        const zoomElement = document.body;
+        let zoom = 1;
+
+        document.addEventListener("wheel",function(e){
+            if(e.deltaY>0){
+                zoomElement.style.transform = `scale(${(zoom += 1.06)})`;
+            }else{
+                zoomElement.style.transform = `scale(${(zoom -= 1.06)})`;
+
+            }
+        })
+    </script>
+</body>
+</html>
